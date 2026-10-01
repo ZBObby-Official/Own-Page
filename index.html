@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人主页</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 左上角头像 + 昵称 + 简介 -->
+  <header class="profile">
+    <a class="avatar-link" href="https://space.bilibili.com/578346609" target="_blank" rel="noopener">
+  <img class="avatar" src="files/avatar.jpg" alt="头像">
+</a>
+    <div class="profile-text">
+      <h1 class="nickname">ZBObbyの谱面小站</h1>
+      <p class="bio">为君写一谱，请君为我倾心</p>
+    </div>
+  </header>
+
+  <!-- 横跨屏幕的细线 -->
+  <div class="divider"></div>
+
+  <!-- 主体：左信息 / 右文件列表 -->
+  <main class="layout">
+
+    <!-- 左侧：WELCOME 或详情 -->
+    <section class="left-panel">
+      <!-- 默认状态 -->
+      <div id="welcome" class="welcome">WELCOME</div>
+
+      <!-- 详情状态（默认隐藏） -->
+      <div id="detail" class="detail hidden">
+
+        <!-- 左栏：文字信息 -->
+        <div class="detail-info">
+          <div class="detail-head"><span class="head-label">歌曲：</span><span id="d-song"></span></div>
+          <div class="detail-head"><span class="head-label">曲师：</span><span id="d-artist"></span></div>
+          <div class="detail-head"><span class="head-label">谱面难度：</span><span id="d-level"></span></div>
+          <div class="detail-head"><span class="head-label">谱师：</span><span id="d-charter"></span></div>
+          <div class="detail-head"><span class="head-label">发布时间：</span><span id="d-date"></span></div>
+          <div class="detail-head"><span class="head-label">简介：</span><span id="d-desc"></span></div>
+
+          <a id="download-btn" class="download-btn" href="#" download>
+            获取谱面文件
+          </a>
+        </div>
+
+        <!-- 右栏：高清图 -->
+        <div class="detail-cover-wrap">
+          <img id="d-cover" class="detail-cover" src="" alt="">
+          <div class="cover-hint">点击查看大图</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 右侧：文件列表 -->
+    <section class="right-panel">
+      <div id="file-list" class="file-list">
+        <!-- 由 JS 动态生成 -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 灯箱（必须在 body 直接子级，不能放进 .layout 里） -->
+  <div id="lightbox" class="lightbox hidden">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
